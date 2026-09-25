@@ -1,357 +1,364 @@
 <!DOCTYPE html>
-<html lang="hu" class="scroll-smooth">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szakszerű Klímatelepítés és Klímatisztítás Budapest | KlimatelepitesMost</title>
-    <meta name="description" content="Megbízható klímatelepítés, klíma vásárlás és szakszerű karbantartás Budapesten és Pest megyében. Garanciális Gree, Polar, Syen klímák beépítése. Hívjon most!">
-    <link rel="icon" type="image/png" href="air-conditioner.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Klímaszerelés és Forgalmazás</title>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Márkák háromszög elrendezése */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .brand-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .brand-img-container {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .brand-img-container img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .brand-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .brand-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Árazás & Alapszerelés */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .price-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card.featured {
+            border-color: var(--accent);
+            position: relative;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .price-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            color: var(--text-muted);
+        }
+
+        .price-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Tisztítási táblázat mosózsákkal */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Lebegő hívás gomb */
+        .float-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .float-btn:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+<body>
 
-    <!-- Felső Információs Sáv -->
-    <div class="bg-cyan-950/80 border-b border-cyan-800/40 text-cyan-200 text-xs py-2 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-4">
-                <span><i class="fa-solid fa-location-dot text-cyan-400 mr-1.5"></i> Budapest és Pest megye területén</span>
-                <span class="hidden md:inline"><i class="fa-solid fa-shield-halved text-cyan-400 mr-1.5"></i> Garanciális telepítés & kivitelezés</span>
-            </div>
-            <div>
-                <a href="tel:+36209852797" class="font-bold hover:text-white transition flex items-center">
-                    <i class="fa-solid fa-phone text-emerald-400 mr-1.5"></i> 06 20 985 2797
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigáció / Fejléc -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-11 h-11 bg-gradient-to-tr from-cyan-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition">
-                    <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
-                </div>
-                <div>
-                    <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white block leading-none">Klímatelepítés<span class="text-cyan-400">Most</span></span>
-                    <span class="text-[11px] font-semibold text-slate-400 tracking-wider uppercase">Szakszerű beépítés & szerviz</span>
-                </div>
-            </a>
-
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#szolgaltatasok" class="hover:text-cyan-400 transition">Szolgáltatások</a>
-                <a href="#arak" class="hover:text-cyan-400 transition">Árak és Csomagok</a>
-                <a href="#markak" class="hover:text-cyan-400 transition">Márkáink</a>
-                <a href="#tippek" class="hover:text-cyan-400 transition">Tudnivalók</a>
-            </nav>
-
-            <div class="flex items-center space-x-3">
-                <a href="tel:+36209852797" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-emerald-600/20 flex items-center space-x-2 text-sm">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="hidden sm:inline">06 20 985 2797</span>
-                    <span class="sm:hidden">Hívás</span>
-                </a>
-            </div>
-        </div>
+    <header>
+        <h1>Prémium Klímaszerelés és Forgalmazás</h1>
+        <p>Megbízható márkák, szakszerű telepítés és garanciális karbantartás</p>
     </header>
 
-    <!-- Hero Szekció -->
-    <section class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 py-20 sm:py-28 overflow-hidden border-b border-slate-800">
-        <!-- Háttér dekoráció -->
-        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('file_00000000fd90722f813ecfb4919da668.png');"></div>
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container">
 
-        <div class="relative max-w-5xl mx-auto px-4 text-center z-10">
-            
-            <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold px-4 py-2 rounded-full mb-6 shadow-inner">
-                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-                <span>Teljes körű klímatelepítés garanciával Budapesten és Pest megyében</span>
-            </div>
-
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                Szakszerű <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">klímatelepítés</span> és beszerzés
-            </h1>
-
-            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Megbízható klímát keres otthonába vagy irodájába? Válassza a megbízható márkákat (Gree, Polar, Syen), és mi garanciával, gyorsan, tisztán telepítjük!
-            </p>
-
-            <!-- Háromszög elrendezésű Márka Kártyák -->
-            <div id="markak" class="mb-14 max-w-xl mx-auto">
-                <p class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-6">Forgalmazott és telepített márkáink</p>
-                
-                <div class="flex flex-col items-center gap-5">
-                    <!-- Felső csúcs: Gree (images.png) -->
-                    <div class="bg-slate-900/85 backdrop-blur-xl px-12 py-7 rounded-3xl shadow-2xl border border-slate-700/80 hover:border-cyan-500/50 transition duration-300 transform hover:-translate-y-1">
-                        <img src="images.png" alt="Gree klíma" class="h-16 sm:h-20 object-contain filter brightness-110">
+        <!-- Márkák Szekció (Háromszög elrendezés: 3 elem) -->
+        <section>
+            <h2>Kiemelt Márkáink</h2>
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <div class="brand-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Gree_Electric_logo.svg" alt="Gree klíma">
                     </div>
-
-                    <!-- Alsó sor: Polar és Syen -->
-                    <div class="flex justify-center gap-5 w-full">
-                        <div class="bg-slate-900/85 backdrop-blur-xl px-10 py-7 rounded-3xl shadow-2xl border border-slate-700/80 hover:border-cyan-500/50 transition duration-300 transform hover:-translate-y-1 flex-1 max-w-[240px] flex items-center justify-center">
-                            <img src="polar.png" alt="Polar klíma" class="h-14 sm:h-18 object-contain filter brightness-110">
-                        </div>
-                        <div class="bg-slate-900/85 backdrop-blur-xl px-10 py-7 rounded-3xl shadow-2xl border border-slate-700/80 hover:border-cyan-500/50 transition duration-300 transform hover:-translate-y-1 flex-1 max-w-[240px] flex items-center justify-center">
-                            <img src="syen.png" alt="Syen klíma" class="h-14 sm:h-18 object-contain filter brightness-110">
-                        </div>
+                    <h3>Gree</h3>
+                    <p>A világ egyik legnagyobb klímagyártója, kiemelkedő ár-érték arány, megbízható fűtési teljesítnény és modern dizájn.</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-img-container">
+                        <img src="https://via.placeholder.com/200x80/1e293b/38bdf8?text=POLAR" alt="Polar klíma">
                     </div>
+                    <h3>Polar</h3>
+                    <p>Kedvező árfekvésű, mégis magas minőségű berendezések, amelyek tökéletesen adaptálódnak a hazai időjárási kihívásokhoz.</p>
                 </div>
-            </div>
-
-            <!-- Fő CTA Gombok -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:+36209852797" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-8 py-4 rounded-2xl transition shadow-lg shadow-emerald-600/25 flex items-center justify-center space-x-3 text-base">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>Ajánlatkérés / Hívás: 06 20 985 2797</span>
-                </a>
-                <a href="#szolgaltatasok" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold px-8 py-4 rounded-2xl transition flex items-center justify-center space-x-3 text-base">
-                    <span>Szolgáltatások</span>
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Fő Szolgáltatások Szekció -->
-    <section id="szolgaltatasok" class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Miben állunk rendelkezésére?</h2>
-            <p class="text-slate-400 text-base">Komplett klímamegoldások a felméréstől a beüzemelésig és karbantartásig.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 items-stretch">
-            
-            <!-- Szolgáltatás 1: Klímatelepítés -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-emerald-500/40 transition">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition"></div>
-                <div>
-                    <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                <div class="brand-card">
+                    <div class="brand-img-container">
+                        <img src="https://via.placeholder.com/200x80/1e293b/38bdf8?text=SYEN" alt="Syen klíma">
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Szakszerű Klímatelepítés</h3>
-                    <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-                        Új klímaberendezés beszerzése és szakszerű felszerelése teljes körű kivitelezéssel, garanciával a kiválasztástól a beüzemelésig.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i> Garanciális telepítés (<span class="text-emerald-300 font-semibold ml-1">Gree, Polar, Syen</span>)</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i> Helyszíni felmérés és szakmai tanácsadás</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i> Gyors, tiszta munkavégzés</li>
-                    </ul>
-                </div>
-                <div>
-                    <a href="#arak" class="block bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl text-center text-sm transition shadow-lg shadow-emerald-600/20">
-                        Telepítési árak megtekintése
-                    </a>
+                    <h3>Syen</h3>
+                    <p>Stílusos megjelenés, csendes működés és okosvezérlés – a design és a funkcionalitás tökéletes ötvözete otthonába.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Szolgáltatás 2: Klímatisztítás -->
-            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-cyan-500/40 transition">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition"></div>
-                <div>
-                    <div class="w-14 h-14 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                        <i class="fa-solid fa-wind"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Klímatisztítás & Karbantartás</h3>
-                    <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
-                        A rendszeres tisztítás elengedhetetlen az egészséges levegőért és a hatékony működésért. Alapos fertőtlenítést és mosózsákos nagytakarítást biztosítunk.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-3"></i> Alap és mosózsákos szakszerű karbantartás</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-3"></i> Gomba-, baci- és penészmentesítés</li>
-                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-3"></i> Javuló hűtési/fűtési hatásfok, alacsonyabb fogyasztás</li>
-                    </ul>
-                </div>
-                <div>
-                    <a href="#arak" class="block bg-slate-800 hover:bg-slate-700 text-cyan-400 font-bold py-3.5 px-6 rounded-xl text-center text-sm transition border border-slate-700">
-                        Tisztítási árak megtekintése
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Árlista Szekció -->
-    <section id="arak" class="py-20 bg-slate-900/40 border-y border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Átlátható árazás</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4">Áraink és Csomagjaink</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Nincsenek rejtett költségek. Fix, becsületes árak Budapesten és környékén.</p>
-            </div>
-
-            <!-- Klímatelepítési árak és leírás -->
-            <div class="bg-slate-900 border border-emerald-500/40 rounded-3xl p-8 sm:p-10 shadow-2xl mb-12 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-slate-800 pb-6">
+        <!-- Árazás Szekció (Alapszerelés és Extrák) -->
+        <section>
+            <h2>Telepítési Árak és Extrák</h2>
+            <div class="pricing-grid">
+                <div class="price-card featured">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 mb-3 inline-block">Fő szolgáltatás</span>
-                        <h3 class="text-2xl font-extrabold text-white">Klímatelepítés díja</h3>
-                    </div>
-                    <div class="text-left md:text-right">
-                        <span class="text-3xl sm:text-4xl font-black text-emerald-400">90 000 Ft</span>
-                        <span class="block text-xs text-slate-400 mt-1">Alapszerelés</span>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-300">
-                    <div>
-                        <h4 class="font-bold text-white mb-3 flex items-center">
-                            <i class="fa-solid fa-circle-check text-emerald-400 mr-2"></i> Az alapszerelés tartalmazza:
-                        </h4>
-                        <ul class="space-y-2.5 text-slate-300">
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mr-2.5 mt-1"></i> Alapszerelés 3 méter csövezésig</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mr-2.5 mt-1"></i> Dekorcsatornázás kialakítása</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mr-2.5 mt-1"></i> Kültéri egység elhelyezése konzolra</li>
-                            <li class="flex items-start"><i class="fa-solid fa-check text-emerald-400 mr-2.5 mt-1"></i> Kondenzvíz elvezetés kialakítása</li>
+                        <h3>Alapszerelés</h3>
+                        <div class="price">90 000 Ft-tól</div>
+                        <ul>
+                            <li>Max. 3 méter hűtőközeg-csövezés</li>
+                            <li>1 db falfúrás (téglalap / normál fal)</li>
+                            <li>Kültéri és beltéri egység felszerelése</li>
+                            <li>Vákuumozás és nyomáspróba</li>
+                            <li>Beüzemelés és garancialevél kitöltése</li>
                         </ul>
                     </div>
-                    <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/80 flex flex-col justify-center">
-                        <h4 class="font-bold text-white mb-2 flex items-center">
-                            <i class="fa-solid fa-ruler text-cyan-400 mr-2"></i> Extra hosszúság:
-                        </h4>
-                        <p class="text-slate-300 mb-4">3 méteren felül minden megkezdett méter cső:</p>
-                        <span class="text-2xl font-extrabold text-cyan-300">10 000 Ft / méter</span>
+                    <a href="tel:+36300000000" style="text-align: center; background-color: var(--accent); color: var(--bg-color); padding: 0.75rem; border-radius: 6px; font-weight: bold; text-decoration: none;">Időpontot kérek</a>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <h3>Szerelési Extrák & Díjak</h3>
+                        <div class="price" style="font-size: 1.8rem; margin-bottom: 1rem;">Opcionális tételek</div>
+                        <ul>
+                            <li><strong>Plusz csövezés (3m felett):</strong> 12 000 Ft / fm</li>
+                            <li><strong>Panelfal / Vasalt beton fúrás:</strong> 15 000 Ft-tól</li>
+                            <li><strong>Előcsövezés kiépítése:</strong> Egyedi felmérés alapján</li>
+                            <li><strong>Régi klíma leszerelése:</strong> 20 000 Ft-tól</li>
+                            <li><strong>Külön áramkör kiépítése:</strong> 40 000 Ft-tól</li>
+                        </ul>
                     </div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; text-align: center;">* Az árak bruttó összegben értendők.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Táblázat: Klímatisztítás -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl mb-12">
-                <div class="p-6 bg-slate-800/60 border-b border-slate-700">
-                    <h3 class="text-xl font-bold text-white">Klímatisztítási Árak</h3>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-slate-800/40 text-slate-300 text-xs sm:text-sm uppercase tracking-wider border-b border-slate-700">
-                                <th class="p-5 font-bold">Készülék / Mennyiség</th>
-                                <th class="p-5 font-bold">Alap karbantartás</th>
-                                <th class="p-5 font-bold">Mosózsákos nagykarbantartás</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-800 text-sm text-slate-200">
-                            <tr class="hover:bg-slate-800/40 transition">
-                                <td class="p-5 font-semibold text-white">1 db Split klíma</td>
-                                <td class="p-5 font-medium text-cyan-300">15 900 Ft</td>
-                                <td class="p-5 font-bold text-emerald-400">20 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
-                                <td class="p-5 font-semibold text-white">2 db Split klíma</td>
-                                <td class="p-5 font-medium text-cyan-300">26 000 Ft</td>
-                                <td class="p-5 font-bold text-emerald-400">38 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition">
-                                <td class="p-5 font-semibold text-white">3 db Split klíma</td>
-                                <td class="p-5 font-medium text-cyan-300">36 000 Ft</td>
-                                <td class="p-5 font-bold text-emerald-400">56 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
-                                <td class="p-5 font-semibold text-white">4+ db Split klíma</td>
-                                <td class="p-5 font-bold text-slate-300" colspan="2">Egyedi kedvezményes ajánlat alapján</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition">
-                                <td class="p-5 font-semibold text-white">Multi (Duál / Triál)</td>
-                                <td class="p-5 font-medium text-cyan-300">13 900 Ft / beltéri</td>
-                                <td class="p-5 font-bold text-emerald-400">17 900 Ft / beltéri</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <!-- Mosózsákos Tisztítási Táblázat -->
+        <section>
+            <h2>Klímatisztítás és Karbantartás (Mosózsákos technológiával)</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szolgáltatás megnevezése</th>
+                            <th>Leírás</th>
+                            <th>Ár</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Alap klímatisztítás</strong></td>
+                            <td>Szűrők fertőtlenítése, burkolat tisztítása, gombaölő szeres kezelés.</td>
+                            <td>15 000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prémium mosózsákos tisztítás</strong></td>
+                            <td>Teljes körű mélytisztítás speciális mosózsákkal, a beltéri egység leszerelése nélkül, nagynyomású öblítéssel. Eltávolítja a rejtett penészt és baktériumokat.</td>
+                            <td>25 000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Szezonális karbantartás (Éves csomag)</strong></td>
+                            <td>Évi 2 alkalommal (fűtési és hűtési szezon előtt): teljes átvizsgálás, tisztítás, szivárgásellenőrzés.</td>
+                            <td>35 000 Ft / év</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </section>
 
-            <!-- További részletek / Kérdések -->
-            <div id="tippek" class="grid md:grid-cols-2 gap-8">
-                
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-xl font-bold text-cyan-400 mb-4 flex items-center">
-                        <i class="fa-solid fa-circle-question mr-3"></i> Melyik tisztítást válasszam?
-                    </h3>
-                    <ul class="space-y-4 text-sm text-slate-300 leading-relaxed">
-                        <li>
-                            <strong class="text-white">• Alap karbantartás:</strong> Akkor ajánlott, ha a klíma rendszeresen (évente) tisztítva van, nincs elhanyagolva, és a belső egység szemmel láthatóan nem penészes.
-                        </li>
-                        <li>
-                            <strong class="text-white">• Mosózsákos nagykarbantartás:</strong> Ha a klíma belseje sötét, penészes, kellemetlen szagot áraszt, vagy régóta nem volt karbantartva. Magas nyomású mosással és speciális vegyszerrel a teljes belső hőcserélőt átmossuk.
-                        </li>
-                    </ul>
-                </div>
+    </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-xl">
-                    <h3 class="text-xl font-bold text-emerald-400 mb-4 flex items-center">
-                        <i class="fa-solid fa-fire mr-3"></i> Fűtésre is használja a klímát?
-                    </h3>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                        Aki télen klímával fűt, annak a készüléke kétszer annyi üzemórát teljesít. Fűtési üzemmódban a fokozott porterhelés és a hőcserélő terhelése miatt <strong>évi kétszeri karbantartás (tavasszal és ősszel)</strong> javasolt a meghibásodások elkerülése végett.
-                    </p>
-                    <div class="text-xs text-slate-400 pt-3 border-t border-slate-800 space-y-1">
-                        <p><strong class="text-slate-300">Az ár tartalmazza:</strong> Kiszállást, vegyszereket, szerszámokat és a munkadíjat.</p>
-                        <p><strong class="text-slate-300">Nem tartalmazza:</strong> Esetleges gáztöltést és a parkolási díjat.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Kapcsolat / Footer Szekció -->
-    <footer id="kapcsolat" class="bg-slate-950 text-white pt-20 pb-12 border-t border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            
-            <div class="bg-gradient-to-br from-slate-900 to-emerald-950/60 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl mb-16 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-8">
-                <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Új klímát szeretne telepíttetni?</h2>
-                    <p class="text-slate-300 text-sm sm:text-base">Hívjon bizalommal, egyeztessünk felmérési időpontot még ma!</p>
-                </div>
-                <div>
-                    <a href="tel:+36209852797" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-8 py-4 rounded-2xl transition shadow-xl shadow-emerald-600/25 flex items-center space-x-3 text-lg whitespace-nowrap">
-                        <i class="fa-solid fa-phone text-xl"></i>
-                        <span>06 20 985 2797</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 text-sm text-slate-400">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 bg-emerald-500 rounded-xl flex items-center justify-center text-slate-950 font-bold">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <span class="font-bold text-white text-base">KlímatelepítésMost</span>
-                    </div>
-                    <p class="leading-relaxed">Szakszerű klímatelepítés, beszerzés és karbantartás Budapesten és Pest megyében.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white text-base mb-4">Elérhetőségek</h4>
-                    <p class="mb-2"><i class="fa-solid fa-phone text-cyan-400 mr-2"></i> <a href="tel:+36209852797" class="hover:text-white transition">06 20 985 2797</a></p>
-                    <p class="mb-2"><i class="fa-solid fa-envelope text-cyan-400 mr-2"></i> <a href="mailto:info@klimatelepitesmost.hu" class="hover:text-white transition">info@klimatelepitesmost.hu</a></p>
-                    <p><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> Budapest & Pest megye</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white text-base mb-4">Márkáink</h4>
-                    <p class="text-slate-300 font-medium">Gree, Polar, Syen értékesítés, telepítés és karbantartás.</p>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
-                © 2026 klimatelepitesmost.hu – Minden jog fenntartva.
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- Mobil Lebegő Hívás Gomb -->
-    <a href="tel:+36209852797" class="sm:hidden fixed bottom-6 right-6 bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl z-50 animate-bounce shadow-emerald-600/50">
-        <i class="fa-solid fa-phone"></i>
+    <!-- Lebegő hívás gomb -->
+    <a href="tel:+36300000000" class="float-btn">
+        📞 Hívás most
     </a>
+
+    <footer>
+        <p>&copy; 2026 Klímaszerelés. Minden jog fenntartva.</p>
+    </footer>
 
 </body>
 </html>
