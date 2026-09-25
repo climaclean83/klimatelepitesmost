@@ -248,43 +248,76 @@
                 </div>
             </div>
 
-            <!-- Táblázat: Klímatisztítás (Kizárólag Mosózsákos) -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl mb-12">
-                <div class="p-6 bg-slate-800/60 border-b border-slate-700">
-                    <h3 class="text-xl font-bold text-white">Klímatisztítási Árak (Mosózsákos nagytakarítás)</h3>
+            <!-- Klímatisztítási Kártya (Mosózsákos nagytakarítás, részletekkel és táblázattal) -->
+            <div class="bg-slate-900 border border-cyan-500/40 rounded-3xl p-8 sm:p-10 shadow-2xl mb-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-slate-800 pb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 mb-3 inline-block">Kizárólag mosózsákos nagytakarítás</span>
+                        <h3 class="text-2xl font-extrabold text-white">Klímatisztítási Árak</h3>
+                    </div>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-slate-800/40 text-slate-300 text-xs sm:text-sm uppercase tracking-wider border-b border-slate-700">
-                                <th class="p-5 font-bold">Készülék / Mennyiség</th>
-                                <th class="p-5 font-bold">Szolgáltatás típusa</th>
-                                <th class="p-5 font-bold text-right">Ár</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-800 text-sm text-slate-200">
-                            <tr class="hover:bg-slate-800/40 transition">
-                                <td class="p-5 font-semibold text-white">1 db Split klíma</td>
-                                <td class="p-5 text-slate-300">Mosózsákos nagytakarítás</td>
-                                <td class="p-5 font-bold text-emerald-400 text-right">20 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
-                                <td class="p-5 font-semibold text-white">2 db Split klíma</td>
-                                <td class="p-5 text-slate-300">Mosózsákos nagytakarítás</td>
-                                <td class="p-5 font-bold text-emerald-400 text-right">30 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition">
-                                <td class="p-5 font-semibold text-white">3 db Split klíma</td>
-                                <td class="p-5 text-slate-300">Mosózsákos nagytakarítás</td>
-                                <td class="p-5 font-bold text-emerald-400 text-right">40 000 Ft</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
-                                <td class="p-5 font-semibold text-white">4+ db Split klíma</td>
-                                <td class="p-5 text-slate-300">Mosózsákos nagytakarítás</td>
-                                <td class="p-5 font-bold text-slate-300 text-right">Egyedi megbeszélés alapján</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <!-- Felsorolás arról, hogy mit tartalmaz a tisztítás -->
+                <div class="grid md:grid-cols-2 gap-8 text-sm text-slate-300 mb-8">
+                    <div>
+                        <h4 class="font-bold text-white mb-3 flex items-center">
+                            <i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i> A tisztítás / karbantartás tartalmazza:
+                        </h4>
+                        <ul class="space-y-2.5 text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-cyan-400 mr-2.5 mt-1"></i> Mosózsákos szakszerű nagytakarítás</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-cyan-400 mr-2.5 mt-1"></i> Alapos gomba-, baci- és penészmentesítés</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-cyan-400 mr-2.5 mt-1"></i> Kültéri egység szemrevételezése</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-cyan-400 mr-2.5 mt-1"></i> Szükség esetén kefés tisztítás</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/80 flex flex-col justify-center">
+                        <h4 class="font-bold text-white mb-2 flex items-center">
+                            <i class="fa-solid fa-wind text-cyan-400 mr-2"></i> Kültéri egység mosása:
+                        </h4>
+                        <p class="text-slate-300 mb-2">A kültéri egység nagynyomású mosása opciós és feláras szolgáltatás.</p>
+                        <span class="text-xs text-slate-400">Kérjen egyedi tájékoztatást a helyszínen!</span>
+                    </div>
+                </div>
+
+                <!-- Táblázat az árakról -->
+                <div class="border-t border-slate-800 pt-6">
+                    <h4 class="font-bold text-white mb-4 text-base flex items-center">
+                        <i class="fa-solid fa-tags text-cyan-400 mr-2"></i> Mennyiségi árak:
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800/40 text-slate-300 text-xs sm:text-sm uppercase tracking-wider border-b border-slate-700">
+                                    <th class="p-4 font-bold">Készülék / Mennyiség</th>
+                                    <th class="p-4 font-bold">Szolgáltatás típusa</th>
+                                    <th class="p-4 font-bold text-right">Ár</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-sm text-slate-200">
+                                <tr class="hover:bg-slate-800/40 transition">
+                                    <td class="p-4 font-semibold text-white">1 db Split klíma</td>
+                                    <td class="p-4 text-slate-300">Mosózsákos nagytakarítás</td>
+                                    <td class="p-4 font-bold text-cyan-400 text-right">20 000 Ft</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
+                                    <td class="p-4 font-semibold text-white">2 db Split klíma</td>
+                                    <td class="p-4 text-slate-300">Mosózsákos nagytakarítás</td>
+                                    <td class="p-4 font-bold text-cyan-400 text-right">30 000 Ft</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/40 transition">
+                                    <td class="p-4 font-semibold text-white">3 db Split klíma</td>
+                                    <td class="p-4 text-slate-300">Mosózsákos nagytakarítás</td>
+                                    <td class="p-4 font-bold text-cyan-400 text-right">40 000 Ft</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/40 transition bg-slate-800/20">
+                                    <td class="p-4 font-semibold text-white">4+ db Split klíma</td>
+                                    <td class="p-4 text-slate-300">Mosózsákos nagytakarítás</td>
+                                    <td class="p-4 font-bold text-slate-300 text-right">Egyedi megbeszélés alapján</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
